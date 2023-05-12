@@ -1,0 +1,23 @@
+<p-card header="Order Info" styleClass="gradient-card">
+ <div class="row">
+  <div class="col-6 col-md-4 col-lg-4 text-md-end txt-label">
+   <p>Client Name</p>
+   <p>Total Price</p>
+   <p>Address</p>
+   <p>Estimated Time</p>
+  </div>
+  <div class="col-6 col-md-8 col-lg-8 txt-info">
+   <p>{{ userDetail.name }}</p>
+   <p>{{ totalCart | currency }}</p>
+   <p>{{ userDetail.address }}</p>
+   <p>{{ orderTime | date : 'yyyy-MM-dd HH:mm:ss' }}</p>
+  </div>
+  <div class="col-12">
+   <span class="p-float-label my-3">
+    <textarea id="float-input" rows="5" pInputTextarea [autoResize]="true" [value]="value" class="w-100"></textarea>
+    <label for="float-input" class="fw-semibold">Your Note</label>
+   </span>
+   <button class="alter w-100" appDebounceClick (debounceClick)="checkout()"><span>CONFIRM</span></button>
+  </div>
+ </div>
+</p-card>

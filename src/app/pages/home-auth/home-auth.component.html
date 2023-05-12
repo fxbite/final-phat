@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container">
+    <div class="card flex justify-content-center">
+        <div class="table">
+            <p-table [value]="listFood" [tableStyle]="{'min-width': '60rem'}">
+                    <ng-template pTemplate="caption">
+                        <div class="flex align-items-center justify-content-between">
+                            Products
+                        </div>
+                        <div class="button-header">
+                            <button class="snip1582"  type = "button" routerLink="/dashboard">Dashboard</button>
+                        </div>
+                    </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>CookTime</th>
+                        <th>Price</th>
+                        <th>Origins</th>
+                        <th>Favorite</th>
+                        <th>Stars</th>
+                        <th>Tags</th>
+                        <th>Action</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-food>
+                    <tr>
+                        <th>{{food.id}}</th>
+                        <th><img [src]="food.imageUrl" alt="" style="width: 50px;"></th>
+                        <th>{{food.name}}</th>
+                        <th>{{food.cookTime}}</th>
+                        <th>{{food.price}}</th>
+                        <th>{{food.origins}}</th>
+                        <th>{{food.favorite}}</th>
+                        <th>{{food.stars}}</th>
+                        <th>{{food.tags}}</th>
+                        <td>
+                            <fa-icon (click)="deleteFood(food._id)" [icon]="icon"></fa-icon>
+                            <fa-icon [icon]="iconEdit" [routerLink]="['/update-food', food.id]"></fa-icon>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+

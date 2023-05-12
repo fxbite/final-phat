@@ -1,0 +1,27 @@
+<div class="re-button">
+    <div class="button">
+        <button class="snip1582" routerLink="/home-auth">Product List</button>
+    </div>
+</div>
+<div class="card">
+    <div class="form">
+        <div class="tittle">
+            <h1>ADD FOOD</h1>
+        </div>
+        <p class="message-p">{{addFoodMessage}}</p>
+        <form #addFood = "ngForm" (ngSubmit)="submit(addFood.value)" class="common-form">
+            <input type="text" class="form-control" placeholder="Enter ID" name="id" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Food Name" name="name" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Cook Time" name="cookTime" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Price" name="price" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Favorite" name="favorite" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Origins" name="origins" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Stars" name="stars" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Image" name="imageUrl" ngModel />
+            <input type="text" class="form-control" placeholder="Enter Tags" name="tags" ngModel />
+            <div class="button">
+                <button class="snip1582">Add Food</button>
+            </div>
+          </form>
+    </div>
+</div>

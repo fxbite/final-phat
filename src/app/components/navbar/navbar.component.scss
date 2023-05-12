@@ -1,0 +1,20 @@
+.gradient-nav {
+ background: linear-gradient(135deg, aliceblue, rgba(211, 210, 254, 0.3), #eae5f588);
+ .nav-link {
+  color: #333;
+  font-size: 1.1rem;
+ }
+}
+
+.navbar-toggler {
+ padding: 0.1rem 0.3rem;
+
+ .navbar-toggler-icon {
+  font-size: 1.1rem;
+ }
+
+ &:focus {
+  box-shadow: none;
+  border-color: rgba($color: #452a19, $alpha: 0.6);
+ }
+}

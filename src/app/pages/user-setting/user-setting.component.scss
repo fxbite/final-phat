@@ -1,0 +1,26 @@
+:host {
+ ::ng-deep {
+  .p-inputswitch {
+   .p-inputswitch-slider {
+    height: 1.4rem;
+    width: 2.7rem;
+   }
+
+   .p-inputswitch-slider::before {
+    height: 1rem;
+    width: 1rem;
+    margin-top: -0.5rem;
+   }
+  }
+  .p-inputswitch.p-inputswitch-checked {
+   .p-inputswitch-slider {
+    // background: linear-gradient(#8e2de2, #4a00e0);
+    background: #8e2de2 !important;
+   }
+  }
+
+  .p-button {
+   padding: 0.5rem 0.8rem;
+  }
+ }
+}
