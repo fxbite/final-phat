@@ -11,10 +11,15 @@ export class NavbarComponent {
     //
     quantity: string = '0';
     username: string = '';
+    show: boolean = false
     constructor(private cartService: CartService, private userService: UserService) {
         this.cartService.getCartObservable().subscribe((newCart) => {
             this.quantity = newCart.items?.length.toString();
         });
+
+        if(this.userService.getCurrentUser().isAdmin) {
+            this.show = true
+        }
 
         this.username = this.userService.getCurrentUser().name;
     }
