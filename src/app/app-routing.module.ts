@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { OrderGuard } from './auth/order.guard';
+import { AdminGuard } from './auth/admin.guard'
 
 import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -51,7 +52,8 @@ const routes: Routes = [
  {
   path: 'food-detail/:id',
   component: FoodDetailComponent,
-  title: 'Food Detail | Fsoft Food'
+  title: 'Food Detail | Fsoft Food',
+  canActivate: [AuthGuard]
  },
  {
   path: 'menu',
@@ -83,22 +85,26 @@ const routes: Routes = [
  {
     path: 'home-auth',
     component: HomeAuthComponent,
-    title: 'Homepage'
+    title: 'Homepage',
+    canActivate: [AuthGuard, AdminGuard]
 },
 {
     path: 'add-food',
     component: AddfoodComponent,
-    title: 'AddFood'
+    title: 'AddFood',
+    canActivate: [AuthGuard, AdminGuard]
 },
 {
     path: 'update-food/:id',
     component: UpdateComponent,
-    title: 'Update'
+    title: 'Update',
+    canActivate: [AuthGuard, AdminGuard]
 },
 {
     path: 'dashboard',
     component: DashboardComponent,
-    title: 'Dashboard'
+    title: 'Dashboard',
+    canActivate: [AuthGuard, AdminGuard]
 },
  { path: '**', component: NotFoundComponent, title: 'Page Not Found | Fsoft Food' }
 ];
