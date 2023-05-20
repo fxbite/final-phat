@@ -21,9 +21,9 @@ export const environment = {
     // ORDER_NEW_FOR_CURRENT_USER_URL: '/api/orders/newOrderForCurrentUser',
     // ORDER_PAY_URL: '/api/orders/pay',
 
-    FOODS_CREATE: '/api/foods',
-    FOODS_UPDATE: '/api/foods/',
-    FOODS_DELETE: '/api/foods/',
+    FOODS_CREATE: `${apiURL}/api/foods`,
+    FOODS_UPDATE: `${apiURL}/api/foods/`,
+    FOODS_DELETE: `${apiURL}/api/foods/`,
 
-    GET_ORDER: '/api/orders'
+    GET_ORDER: `${apiURL}/api/orders`
 };
