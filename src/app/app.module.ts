@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
+import { ChipsModule } from 'primeng/chips';
 import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { TableModule } from 'primeng/table';
@@ -88,6 +89,7 @@ import { HomeAuthComponent } from './pages/home-auth/home-auth.component';
 import { UpdateComponent } from './pages/update/update.component';
 
 const PRIMENG_DEPENDENCIES = [
+ChipModule,
  ButtonModule,
  MultiSelectModule,
  TableModule,

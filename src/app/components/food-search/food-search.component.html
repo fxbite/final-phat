@@ -12,7 +12,7 @@
    *ngFor="let tag of tags"
    label="{{ tag.name }}"
    styleClass="p-button-secondary me-3 mt-2"
-   [routerLink]="['/menu?tag_filter', tag.name]"
+   [routerLink]="['/menu/tag', tag.name]"
   ></p-button>
  </div>
 </div>

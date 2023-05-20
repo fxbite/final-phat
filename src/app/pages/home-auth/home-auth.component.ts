@@ -32,10 +32,6 @@ export class HomeAuthComponent {
     }, 1000);
   }
 
-  updateFood(food_id: string){
-
-  }
-
   list() {
     this.food.getFoods().subscribe((res) => {
       if(res) {

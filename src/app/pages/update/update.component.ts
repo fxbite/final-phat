@@ -9,7 +9,7 @@ import { IFood } from 'src/app/shared/interfaces/IFood';
   styleUrls: ['./update.component.scss']
 })
 export class UpdateComponent {
-  foodData! : IFood
+  foodData!: IFood
   food_Id!: string;
 
   constructor (private route: ActivatedRoute, private updateFood: FoodService, private router: Router) {}
@@ -25,6 +25,7 @@ export class UpdateComponent {
 
   submit(data: IFood){
     this.updateFood.updateFood(this.food_Id, data).subscribe((res) => {
+      console.log('test')
       this.router.navigate(['/home-auth'])
     });
   }

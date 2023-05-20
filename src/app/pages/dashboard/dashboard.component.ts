@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -6,10 +6,12 @@ import { OrderService } from 'src/app/services/order.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
-  basicData: any;
+export class DashboardComponent implements OnInit {
+  revenueData: any;
+  orderData: any
   basicOptions: any;
   revenue!: number;
+  orderSum!: number
 
   constructor (private order: OrderService) {}
 
@@ -24,14 +26,29 @@ export class DashboardComponent {
             return total + value['totalPrice']
         },0)
 
-        this.basicData = {
+        this.orderSum = value.length
+
+        this.revenueData = {
             labels: ['Revenue'],
             datasets: [
                 {
-                    label: 'Sales (dollar)',
+                    label: 'Dollar (USD)',
                     data: [this.revenue],
                     backgroundColor: ['rgba(255, 159, 64, 0.2)'],
                     borderColor: ['rgb(255, 159, 64)'],
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        this.orderData = {
+            labels: ['Sum of Order'],
+            datasets: [
+                {
+                    label: 'Order',
+                    data: [this.orderSum],
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)'],
+                    borderColor: ['rgb(75, 192, 192)'],
                     borderWidth: 1
                 }
             ]

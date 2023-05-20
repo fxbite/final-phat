@@ -63,7 +63,7 @@ const routes: Routes = [
   // loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)
  },
  { path: 'menu?search=:searchTerm', component: MenuComponent },
- { path: 'menu?tag_filter/:tag', component: MenuComponent },
+ { path: 'menu/tag/:tag', component: MenuComponent },
  {
   path: 'cart',
   component: CartComponent,

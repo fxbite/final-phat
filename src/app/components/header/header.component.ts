@@ -7,8 +7,11 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  username: string = ''
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+    this.username = this.userService.getCurrentUser().name;
+  }
 
   logout() {
     this.userService.logout();

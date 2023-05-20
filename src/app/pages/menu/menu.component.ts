@@ -28,11 +28,6 @@ export class MenuComponent implements OnInit {
         private loadingService: LoadingService
     ) {
         ac.params.subscribe((params) => {
-            if (params['searchTerm']) {
-                this.fs.searchFoods(params['searchTerm']).subscribe((data) => {
-                    this.foodsResult = data;
-                });
-            }
             if (params['tag']) {
                 this.fs.getFoodsByTag(params['tag']).subscribe((data) => {
                     this.foodsResult = data;

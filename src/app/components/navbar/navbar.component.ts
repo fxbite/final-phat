@@ -8,7 +8,8 @@ import { UserService } from '../../services/user.service';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-    //
+    
+    showLogin = false
     quantity: string = '0';
     username: string = '';
     show: boolean = false
@@ -22,6 +23,9 @@ export class NavbarComponent {
         }
 
         this.username = this.userService.getCurrentUser().name;
+        if(this.username) {
+            this.showLogin = true
+        }
     }
 
     logout() {
